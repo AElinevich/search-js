@@ -1,12 +1,20 @@
+*{
+box-sizing: border-box;
+margin: 0;
+}
+
 
 body {
   font-family: 'Nunito', sans-serif;
   background-color:whitesmoke;
   color:#333;
+  height: 100vh;
+  font-size: 16px;
 }
 .wrapper {
-  height: 100vh;
   display: flex;
+  z-index: 100;
+  position: relative;
   flex-direction: column;   
   align-items: center;
   justify-content: start; 
@@ -14,12 +22,12 @@ body {
 #search {
   outline: none;
   color: #fff;
-  width: 296px;
+  width: 300px;
   height: 30px;
   background-color: red;
-  font-size: 16px;
+  font-size: 1rem;
   height: 50px;
-  border:1px solid #fff;
+  border:1px solid red;
   text-align: center;
 }
 #search::placeholder{
@@ -29,10 +37,10 @@ body {
 #search:focus::placeholder{
   color:red;
 }
-#search:focus{
-  width: 294px;
+#search:focus{ 
   background-color:whitesmoke;
-  border:1px solid red;
+  background-color: transparent;
+  border:1px solid #fff;
   color:#333;
 }
 
@@ -42,16 +50,19 @@ body {
 
 button {
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 1rem;
   width: 300px;
   color: red;
   height: 50px;
   outline: none;
   background-color: #fff;
-  border:1px solid red;
+  border:1px solid transparent;
   padding: 15px 0px;
   cursor: pointer;
   transition: box-shadow 2s ease, color 2s ease;
+}
+.btn-length{
+  margin-top: 50px;
 }
 
 button:hover {
@@ -65,6 +76,50 @@ button:hover {
 
 .warning {
   color: red;
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 
+.satic-area {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background: url(../img/poster-about.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.dynamic-area1   {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  background: url(../img/poster-drop-animate2.png) repeat-x 0px 0px;
+  background-size: cover;
+  -webkit-animation: posterDrop1 6000s linear infinite;
+  -moz-animation: posterDrop1 6000s linear infinite;
+  -o-animation: posterDrop1 6000s linear infinite;
+      animation: posterDrop1 6000s linear infinite;
+}
+
+@-webkit-keyframes posterDrop1 { from { background-position: 0 0; } to { background-position: 4000% 0; }  }
+@-moz-keyframes posterDrop1 { from { background-position: 0 0; } to { background-position: 4000% 0; }  }
+@-o-keyframes posterDrop1 { from { background-position: 0 0; } to { background-position: 4000% 0; }  }
+  @keyframes posterDrop1 { from { background-position: 0 0; } to { background-position: 4000% 0; }  }
+
+.dynamic-area2   {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  background: url(../img/poster-drop-animate1.png) repeat-x 0px 0px;
+  background-size: cover;
+  -webkit-animation: posterDrop2 8000s linear infinite;
+  -moz-animation: posterDrop2 8000s linear infinite;
+  -o-animation: posterDrop2 8000s linear infinite;
+      animation: posterDrop2 8000s linear infinite;
+}
+@-webkit-keyframes posterDrop2 { from { background-position: 0 0; } to { background-position: 30000% 0; }  }
+@-moz-keyframes posterDrop2 { from { background-position: 0 0; } to { background-position: 30000% 0; }  }
+@-o-keyframes posterDrop2 { from { background-position: 0 0; } to { background-position: 30000% 0; }  }
+  @keyframes posterDrop2 { from { background-position: 0 0; } to { background-position: 30000% 0; } }
