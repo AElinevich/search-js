@@ -101,7 +101,7 @@ button:hover {
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap:10px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .warning {
