@@ -1,8 +1,8 @@
 const search = document.getElementById('search'),
   check = document.getElementById('check'),
-  btnOnLength = document.querySelector('.btn-number'),
+  btnOnNumber = document.querySelector('.btn-number'),
   resultField = document.getElementById('result-field'),
-  btnOnSubString = document.querySelector('.btn-string'),
+  btnOnString = document.querySelector('.btn-string'),
   warningField = document.getElementById('warning-field');
   
 
@@ -75,14 +75,14 @@ check.addEventListener('click', () => {
   check.checked ? checked = true : checked = false;
 });
 
-btnOnSubString.addEventListener('click', (event) => {
+btnOnString.addEventListener('click', (event) => {
   event.preventDefault();
   searchData.length = 0;
   resultField.textContent = "";
   renderSubString();
 });
 
-btnOnLength.addEventListener('click', (event) => {
+btnOnNumber.addEventListener('click', (event) => {
   event.preventDefault();
   searchData.length = 0;
   resultField.textContent = "";
