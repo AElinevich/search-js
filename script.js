@@ -1,8 +1,10 @@
 const search = document.getElementById('search'),
   check = document.getElementById('check'),
-  btnOnLength = document.querySelector('.btn-length'),
+  btnOnLength = document.querySelector('.btn-number'),
   resultField = document.getElementById('result-field'),
-  btnOnSubString = document.querySelector('.btn-subString');
+  btnOnSubString = document.querySelector('.btn-string'),
+  warningField = document.getElementById('warning-field');
+  
 
 let resultData = [];
 let searchData = [];
@@ -30,14 +32,16 @@ getData.getBase();
 
 const render = () => {
   let searchValue = +search.value;
+  warningField.classList.remove('warning');
   resultData.filter(item => {
     if (isNumber(searchValue) && searchValue && item.length > searchValue) {
-      resultField.textContent = '';
+      warningField.textContent = '';
       searchData.push(item);
-      resultField.classList.remove('warning');
+      warningField.classList.remove('warning');
     } else if (!searchValue || !isNumber(searchValue)) {
-      resultField.textContent = 'enter the number';
-      resultField.classList.add('warning');
+      warningField.classList.add('warning');
+      warningField.textContent = 'enter the number';
+    
     }
   });
   searchData.forEach((item) => {
@@ -48,7 +52,8 @@ const render = () => {
 
 const renderSubString = () => {
   let searchValue = search.value;
-  resultField.classList.remove('warning');
+  warningField.classList.remove('warning');
+  warningField.textContent = '';
   resultData.filter(item => {
     searchData.length = 0;
     if (searchValue && checked && item.includes(searchValue)) {
@@ -56,8 +61,8 @@ const renderSubString = () => {
     } else if (searchValue && !checked && item.toLowerCase().includes(searchValue.toLowerCase())) {
       searchData.push(item);
     } else if(!searchValue || isNumber(searchValue)) {
-      resultField.textContent = 'enter the substring or string';
-      resultField.classList.add('warning');
+      warningField.textContent = 'enter the substring or string';
+      warningField.classList.add('warning');
     }
     searchData.forEach((item) => {
       resultField.insertAdjacentHTML('beforeend',

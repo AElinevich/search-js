@@ -12,10 +12,11 @@
 <body>
     <div class="satic-area">
         <div class="wrapper">
-            <button type="button" class="btn-length">on length</button>
-            <input type="text" id="search" placeholder="Search...">
-            <button class="btn-subString">on substring</button>
+            <button type="button" class="btn-number" data-tooltip="enter a number and get a string longer than a number">click by number</button>
+            <input type="text" id="search" placeholder="Enter value...">
+            <button class="btn-string" data-tooltip="enter a sub(string) and get a string, that contains the entered value">click by substring</button>
             <label><input type="checkbox" id="check"> case-sensitive</label>
+            <div id="warning-field" class="warning"></div>
             <div id="result-field"></div>
         </div>
         <div class="dynamic-area1"></div>
